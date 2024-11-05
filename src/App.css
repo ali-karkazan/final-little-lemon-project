@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Set basic font and background color */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* General header styling */
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  background-color: #495e57; /* Background color for the header */
+  padding: 10px 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling for the logo */
+.header-logo {
+  height: 40px; /* Adjust logo size as needed */
+  max-width: 90%;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  background-color: white;
+  align-items: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Navbar styling */
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center; /* Center the navbar */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for navbar items */
+.navbar ul li a:hover {
+  color: #bfc3c2;
+  transform: scale(1.1); /* Slightly enlarges the item */
+}
+
+/* Menu toggle button for mobile */
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  /* Show the menu toggle button on smaller screens */
+  .menu-toggle {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Stack logo and menu button horizontally */
+  .header {
+    justify-content: space-between;
   }
+
+  /* Hide the navbar items unless open */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Show navbar items when menu is toggled open */
+  .navbar.open ul {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #495e57;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+.navbar ul li a {
+  padding: 8px 16px; /* Add padding for button-like appearance */
+  border-radius: 5px; /* Rounded corners */
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover {
+  background-color: #bfc3c2; /* Background color on hover */
+  color: #495e57; /* Text color on hover */
+}
+
+.main-content {
+  grid-area: main;
+  background-color: #ffffff; /* White for readability */
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners for modern look */
+}
+
+.main-content {
+  box-shadow: none; /* Remove shadow on smaller screens */
+}
+
+.footer-logo {
+  width: 300px; /* Adjust size as needed */
+  margin: 0 auto;
+  bottom: 0;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #333333; /* Dark grey for contrast */
+  color: #ffffff; /* White text */
+  padding: 15px;
+  text-align: center;
 }
