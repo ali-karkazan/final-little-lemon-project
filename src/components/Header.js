@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../Asset/littlelemon_logo.png'
+import logo from '../Asset/Logo .svg'
 
 const Header = () => {
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -10,11 +10,12 @@ const Header = () => {
     return (
 
         <div className='header'>
+            <img className="header-logo" src={logo} alt="Little Lemon Logo" />
             <button className="menu-toggle" onClick={toggleNavbar}>
                 ☰
             </button>
             <nav className={`navbar ${isNavbarOpen ? "open" : ""}`}>
-                <img className="header-logo" src={logo} alt="Little Lemon Logo" />
+
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#menu">Menu</a></li>

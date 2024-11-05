@@ -18,7 +18,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #495e57; /* Background color for the header */
+  background-color: #495e57;
+  /* background-color: #333333; */
   padding: 10px 20px;
   color: white;
 }
@@ -28,7 +29,7 @@ body {
   height: 40px; /* Adjust logo size as needed */
   max-width: 90%;
   flex-shrink: 0; /* Prevent logo from shrinking */
-  background-color: white;
+  background-color: #333333;
   align-items: left;
 }
 
@@ -113,19 +114,66 @@ body {
   background-color: #bfc3c2; /* Background color on hover */
   color: #495e57; /* Text color on hover */
 }
-
-.main-content {
-  grid-area: main;
-  background-color: #ffffff; /* White for readability */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   padding: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border-radius: 8px; /* Rounded corners for modern look */
 }
 
-.main-content {
-  box-shadow: none; /* Remove shadow on smaller screens */
+.recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
+.recipe:hover {
+  transform: scale(1.05);
+}
+
+.recipe-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.recipe-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.recipe-description {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.recipe-price {
+  font-size: 1.2em;
+  color: #495e57;
+  margin: 10px 0;
+  display: block;
+}
+
+.order-button {
+  background-color: #495e57;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #3b4a44;
+}
 .footer-logo {
   width: 300px; /* Adjust size as needed */
   margin: 0 auto;
