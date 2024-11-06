@@ -3,9 +3,9 @@ import recipes from '../recipes'; // Adjust the import path as necessary
 
 function Main() {
     return (
-        <div className="recipes">
+        <div className="main-container">
             {recipes.map(recipe => (
-                <div className="recipe" key={recipe.id}>
+                <div className="card" key={recipe.id}>
                     <img src={recipe.image} alt={recipe.title} className="recipe-image" />
                     <h3 className="recipe-title">{recipe.title}</h3>
                     <p className="recipe-description">{recipe.description}</p>
