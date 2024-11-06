@@ -1,10 +1,7 @@
 // BookingForm.test.js
 import { render, screen } from '@testing-library/react'; // Import the necessary utilities
-import { initializeTimes } from './timeFunctions'; // Import the initializeTimes function
+import { initializeTimes } from './timeFunctions';
 import BookingForm from './BookingForm'; // Import the component you're testing
-// timeFunctions.test.js
-import { updateTimes } from './timeFunctions'; // Import the updateTimes function
-
 
 test('renders static text in the BookingForm', () => {
     // Render the BookingForm component
@@ -32,8 +29,4 @@ test('initializeTimes should return correct initial times', () => {
         '03:00 PM',
         '04:00 PM',
     ]);
-});
-
-// Assert that the updated times match the expected result
-expect(updatedTimes).toEqual(['12:00 PM', '01:00 PM', '02:00 PM']); // Example updated times
 });
